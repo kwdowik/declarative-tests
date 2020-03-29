@@ -12,7 +12,4 @@ const Book = require('./model/book');
     });
     new BookSubscriber({ notificationService });
     service.create(new Book({ id: 1, author: 'Joe Doe', title: 'Harry Potter' }));
-    // console.log(service.getAll());
-    // service.delete(1);
-    // console.log(service.getAll());
 })()

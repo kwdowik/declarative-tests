@@ -9,13 +9,13 @@ function BooksService({booksRepository, notificationService}) {
             _notificationService.emit({event: events.book.bookCreated, data: book })
         },
         get: (id) => {
-            _booksRepository.get(id)
+            return _booksRepository.get(id);
         },
         getAll: () => {
-            return _booksRepository.getAll()
+            return _booksRepository.getAll();
         },
         update: ({ id, book }) => {
-            _booksRepository.update(id, { ...book })
+            _booksRepository.update(id, { ...book });
             _notificationService.emit({ event: events.book.bookUpdated, data: { ...book, id }})
         },
         delete: (id) => {
