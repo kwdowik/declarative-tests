@@ -12,9 +12,7 @@ describe('notification.service.js', () => {
             subscribers.forEach(subscriber => _notificationService.subscribe({...subscriber, handler}));
             _notificationService.emit(emitArgs);
             expect(handler).toHaveBeenCalledTimes(expected.called);
-            if (expect.arg) {
-                expect(handler).toHaveBeenCalledWith(expected.arg);
-            }
+            expect(handler.mock.calls[0]).toEqual(expected.args);
         })
     );
     it('should not invoke handler for subscribers will unsubscribed for this event', () => {

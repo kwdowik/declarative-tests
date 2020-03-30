@@ -12,7 +12,7 @@ module.exports = [
         handler: jest.fn(),
         expected: {
             called: 1,
-            arg: 'eventData',
+            args: ['eventData'],
         },
     },
     {
@@ -38,7 +38,7 @@ module.exports = [
         handler: jest.fn(),
         expected: {
             called: 3,
-            arg: 'eventData',
+            args: ['eventData'],
         },
     },
     {

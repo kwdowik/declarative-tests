@@ -25,7 +25,7 @@ module.exports = {
                         author: 'John Doe',
                         title: 'test title',
                     },
-                    subscriber: [{
+                    subscribers: [{
                         id: '1',
                         author: 'John Doe',
                         title: 'test title',
@@ -55,7 +55,6 @@ module.exports = {
                         author: 'John Doe',
                         title: 'test title',
                     },
-                    subscriber: undefined
                 }
             ]
         }
@@ -104,8 +103,25 @@ module.exports = {
             expected: [
                 {
                     id: '3',
-                    book: undefined,
                 }
+            ]
+        }
+    ],
+    // get all test cases
+    getAll: [
+        {
+            testName: 'should get all books',
+            books: [
+                {
+                    id: '1',
+                    author: 'John Doe',
+                    title: 'test title'
+                },
+                {
+                    id: '2',
+                    author: 'John Smith',
+                    title: 'test title'
+                },
             ]
         }
     ],
@@ -139,7 +155,7 @@ module.exports = {
                         author: 'new author',
                         title: 'test title',
                     },
-                    subscriber: [{
+                    subscribers: [{
                         id: '1',
                         author: 'new author',
                     }]
@@ -169,8 +185,7 @@ module.exports = {
             ],
             expected: [
                 {
-                    book: undefined,
-                    subscriber: [{
+                    subscribers: [{
                         id: '2',
                         author: 'new author',
                     }]
@@ -198,8 +213,7 @@ module.exports = {
             ],
             expected: [
                 {
-                    book: undefined,
-                    subscriber: [{
+                    subscribers: [{
                         id: '1',
                     }]
                 }
@@ -228,7 +242,7 @@ module.exports = {
                         author: 'John Doe',
                         title: 'test title',
                     },
-                    subscriber: [{
+                    subscribers: [{
                         id: '2',
                     }]
                 }
