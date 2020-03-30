@@ -15,7 +15,6 @@ function Repository() {
             if (!itemToUpdate) {
                 console.warn(`Cannot find item with id: ${id}`);
                 return;
-                // throw Error(`Cannot find item with id: ${id}`);
             }
             _items  = _items.filter(item => item.id !== id);
             _items = _items.concat([{...itemToUpdate, ...item}])
