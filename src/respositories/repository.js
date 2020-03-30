@@ -2,6 +2,10 @@ function Repository() {
     let _items = [];
     return ({
         create: (item) => {
+            if (!item.id || _items.some(i => i.id === item.id)) {
+                console.warn('Cannot create item with.');
+                return;
+            }
             _items = _items.concat([item]);
         },
         get: (id) => _items.find(item => item.id === id),
