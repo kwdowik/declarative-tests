@@ -1,5 +1,5 @@
 const Book = require('./book');
-const testsCases = require('./book.json');
+const testsCases = require('./book.test.json');
 
 describe('book.js', () => {
     testsCases.forEach(({ testName, book, expected }) =>

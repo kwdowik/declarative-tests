@@ -1,5 +1,5 @@
 const Repository = require('./repository');
-const testCases = require('./repository.test-cases');
+const testCases = require('./repository.test.json');
 
 describe('repository.js', () => {
     let _repository;

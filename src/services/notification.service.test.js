@@ -1,5 +1,5 @@
 const NotificationService = require('./notification.service');
-const testCases = require('./notification.service.test-cases');
+const testCases = require('./notification.service.test.json');
 
 describe('notification.service.js', () => {
     let _notificationService;
@@ -9,10 +9,11 @@ describe('notification.service.js', () => {
 
     testCases.forEach(({ testName, subscribers, handler, emitArgs, expected }) =>
         it(testName, () => {
-            subscribers.forEach(subscriber => _notificationService.subscribe({...subscriber, handler}));
+            const fakeHandler = jest.fn();
+            subscribers.forEach(subscriber => _notificationService.subscribe({...subscriber, handler: fakeHandler}));
             _notificationService.emit(emitArgs);
-            expect(handler).toHaveBeenCalledTimes(expected.called);
-            expect(handler.mock.calls[0]).toEqual(expected.args);
+            expect(fakeHandler).toHaveBeenCalledTimes(expected.called);
+            expect(fakeHandler.mock.calls[0]).toEqual(expected.args);
         })
     );
     it('should not invoke handler for subscribers will unsubscribed for this event', () => {

@@ -1,7 +1,7 @@
 const BooksService = require('./books.service');
 const BooksRepository = require('../respositories/repository');
 const NotificationService = require('./notification.service');
-const testCases = require('./books.service.test-cases');
+const testCases = require('./books.service.test.json');
 
 describe('book.service.js', () => {
     let _booksRepository;
