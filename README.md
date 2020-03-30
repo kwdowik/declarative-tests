@@ -21,7 +21,7 @@ npm test
 ```
 
 ```
-npm test:watch
+npm run test:watch
 ```
 
 ## License
