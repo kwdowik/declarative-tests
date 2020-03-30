@@ -3,7 +3,7 @@ function Repository() {
     return ({
         create: (item) => {
             if (!item.id || _items.some(i => i.id === item.id)) {
-                console.warn('Cannot create item with.');
+                console.warn('Cannot create item.');
                 return;
             }
             _items = _items.concat([item]);
@@ -13,7 +13,7 @@ function Repository() {
         update: (id, item) => {
             const itemToUpdate = _items.find(item => item.id === id);
             if (!itemToUpdate) {
-                console.warn(`Cannot find item with id: ${id}`);
+                console.warn(`Cannot find item with id: ${id}.`);
                 return;
             }
             _items  = _items.filter(item => item.id !== id);

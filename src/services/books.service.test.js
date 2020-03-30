@@ -1,5 +1,5 @@
 const BooksService = require('./books.service');
-const BooksRepository = require('../respositories/books.repository');
+const BooksRepository = require('../respositories/repository');
 const NotificationService = require('./notification.service');
 const testCases = require('./books.service.test-cases');
 
